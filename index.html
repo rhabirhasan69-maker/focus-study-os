@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b2d">
+<meta name="description" content="ব্যক্তিগত পড়াশোনা, দৈনিক টাস্ক ও চাকরির প্রস্তুতির ট্র্যাকার।">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>FOCUS — Study OS</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#0c1422;--panel:#131f31;--panel2:#18263a;--ink:#edf4ff;--muted:#91a2bb;--line:#273750;--mint:#7cf0c5;--blue:#88aaff;--gold:#ffd58a;--rose:#ff9eaa;--radius:22px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#172c43 0,transparent 35%),radial-gradient(ellipse at 100% 25%,#202444 0,transparent 28%),var(--bg);color:var(--ink);font-family:'Hind Siliguri',system-ui,sans-serif;line-height:1.55;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.app{max-width:1220px;margin:auto;padding:22px 18px 50px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:25px}.brand{display:flex;gap:12px;align-items:center}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(145deg,var(--mint),#52a8e7);color:#0b1b29;display:grid;place-items:center;font:800 20px Manrope;box-shadow:0 8px 30px #7cf0c52b}.brand h1{font:800 21px Manrope;margin:0;letter-spacing:.4px}.brand p{margin:2px 0 0;color:var(--muted);font-size:13px}.top-actions{display:flex;gap:8px;align-items:center}.date-chip,.icon-btn{background:#172438;border:1px solid var(--line);border-radius:13px;color:var(--ink);padding:9px 12px}.hero{display:grid;grid-template-columns:1.45fr .85fr;gap:16px;margin-bottom:17px}.hero-main{position:relative;overflow:hidden;background:linear-gradient(120deg,#1d6559,#1b3f55 72%,#26314f);border:1px solid #3c766d;border-radius:28px;padding:27px;min-height:220px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font:700 11px Manrope;color:#b9f9e4}.hero h2{font-size:clamp(25px,4vw,38px);line-height:1.22;margin:11px 0 8px;max-width:470px}.hero p{color:#d5e9e9;margin:0;max-width:480px}.hero-mark{position:absolute;right:24px;bottom:5px;font:800 115px Manrope;color:#ffffff12;line-height:1}.hero-side{background:linear-gradient(150deg,#202e47,#151f32);border:1px solid var(--line);border-radius:28px;padding:23px;display:flex;flex-direction:column;justify-content:space-between}.side-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}.streak{font:800 36px Manrope;color:var(--gold);margin:8px 0 0}.side-bottom{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;margin-top:20px}.tabs{display:flex;gap:8px;overflow:auto;padding:3px 1px 14px;margin-bottom:4px}.tab{white-space:nowrap;background:#131f31;border:1px solid var(--line);border-radius:13px;padding:10px 15px;color:#a8b7cd;font-weight:700}.tab.active{background:var(--mint);color:#0c1b24;border-color:var(--mint)}.panel{display:none}.panel.active{display:block}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}.stat,.card{background:linear-gradient(150deg,#172438,#121d2e);border:1px solid var(--line);border-radius:var(--radius);padding:18px}.stat{position:relative;overflow:hidden}.stat .label{color:var(--muted);font-size:13px}.stat strong{display:block;font:800 29px Manrope;margin:8px 0 2px;letter-spacing:-.5px}.stat small{color:var(--muted);font-size:12px}.stat .sicon{position:absolute;right:15px;top:14px;width:34px;height:34px;border-radius:11px;background:#24354a;display:grid;place-items:center;font-size:17px}.green{color:var(--mint)}.blue{color:var(--blue)}.gold{color:var(--gold)}.rose{color:var(--rose)}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:15px}.card{margin-bottom:15px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.card h3{font-size:18px;margin:0}.sub{font-size:12px;color:var(--muted);margin-top:3px}.btn{border:0;border-radius:12px;padding:10px 14px;background:var(--mint);color:#0b2025;font-weight:800}.btn:hover{filter:brightness(1.05)}.btn.ghost{background:#202f44;border:1px solid var(--line);color:var(--ink)}.btn.red{background:#3a222e;color:#ffb7c0;border:1px solid #58303b}.btn.sm{font-size:12px;padding:7px 10px;border-radius:10px}.field{margin-bottom:11px}.field label{display:block;font-size:13px;color:#b6c4d8;margin-bottom:5px}.field input,.field select,.field textarea,.filter{width:100%;background:#0f1929;border:1px solid #30415b;border-radius:12px;padding:11px 12px;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--mint);box-shadow:0 0 0 3px #7cf0c51a}.field textarea{min-height:76px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.list{display:flex;flex-direction:column;gap:9px}.task{display:flex;gap:11px;align-items:flex-start;padding:12px;background:#101b2b;border:1px solid #26364c;border-radius:15px}.task input{width:19px;height:19px;margin-top:4px;accent-color:#7cf0c5;flex-shrink:0}.task-main{flex:1;min-width:0}.task-title{font-weight:700;overflow-wrap:anywhere}.task.done .task-title{text-decoration:line-through;color:#8292a8}.meta{color:var(--muted);font-size:12px}.task-actions{display:flex;gap:5px;flex-wrap:wrap}.empty{border:1px dashed #33445c;border-radius:14px;padding:19px;color:var(--muted);text-align:center;font-size:13px}.progress{height:8px;background:#26354a;border-radius:100px;overflow:hidden}.progress>div{height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--blue));border-radius:100px;transition:width .25s}.progress-label{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin:8px 0}.routine-line{display:grid;grid-template-columns:94px 1fr auto;gap:10px;padding:13px 0;border-bottom:1px solid #26364c;align-items:center}.routine-line:last-child{border-bottom:0}.time{font:700 12px Manrope;color:var(--mint)}.book-entry{padding:13px;border-radius:15px;background:#101b2b;border:1px solid #26364c}.book-entry h4{margin:0 0 3px;font-size:15px}.book-entry p{margin:6px 0 0;color:#a9b9ce;font-size:13px;white-space:pre-wrap}.pill{display:inline-block;background:#243b47;color:var(--mint);border-radius:50px;padding:3px 8px;font-size:11px;font-weight:700}.week{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.daybox{background:#101b2b;border:1px solid #293b52;border-radius:13px;text-align:center;padding:11px 4px}.daybox .dayname{color:var(--muted);font-size:11px}.daybox strong{display:block;font:700 16px Manrope;margin:5px 0}.daybox .dot{width:6px;height:6px;border-radius:50%;background:#40546b;display:inline-block}.daybox.has .dot{background:var(--mint)}.daybox.today{border-color:var(--mint);background:#18332f}.weekbars{display:flex;align-items:flex-end;gap:9px;height:125px;padding-top:12px}.barcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}.bar{width:100%;max-width:30px;min-height:3px;background:linear-gradient(180deg,var(--mint),#398f89);border-radius:8px 8px 3px 3px}.barlabel{font-size:11px;color:var(--muted)}.notice{border:1px solid #534a35;background:#29281f;border-radius:14px;padding:12px;color:#dfd2ad;font-size:12px}.footer{text-align:center;color:#61738d;font-size:12px;padding:23px 0 5px}.hide{display:none!important}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-side{min-height:155px}.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.app{padding:15px 11px 35px}.topbar{align-items:flex-start}.brand h1{font-size:17px}.logo{width:42px;height:42px}.date-chip{font-size:11px;padding:8px}.hero-main{padding:22px;min-height:205px}.hero-mark{font-size:82px;right:12px}.hero-side{padding:18px}.stat{padding:13px}.stat strong{font-size:24px}.stat .sicon{width:28px;height:28px;right:10px;top:10px}.form-grid{grid-template-columns:1fr}.routine-line{grid-template-columns:78px 1fr auto;gap:7px}.week{gap:4px}.daybox{padding:8px 1px}.daybox strong{font-size:13px}.card{padding:14px}.tabs{gap:6px}.tab{padding:9px 12px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">F.</div><div><h1>FOCUS <span style="color:var(--mint)">/ STUDY OS</span></h1><p>তোমার পড়াশোনা, তোমার অগ্রগতি।</p></div></div>
+  <div class="top-actions"><span class="date-chip" id="topDate"></span><button class="icon-btn" title="ব্যাকআপ ডাউনলোড" onclick="exportData()">↧</button></div>
+</header>
+<section class="hero">
+  <div class="hero-main"><div class="eyebrow">YOUR DAILY MISSION</div><h2>একদিনে সব নয়।<br>প্রতিদিন একটু এগিয়ে যাও।</h2><p>সরকারি চাকরির প্রস্তুতিকে ছোট ছোট কাজে ভাগ করো। ধারাবাহিকতাই তোমার আসল শক্তি।</p><div class="hero-mark">GO.</div></div>
+  <div class="hero-side"><div><div class="side-top"><span>🔥 CURRENT STREAK</span><span>চালিয়ে যাও</span></div><div class="streak"><span id="streak">0</span> <span style="font-size:15px">দিন</span></div><div class="sub">যে দিন অন্তত একটি টাস্ক শেষ করেছ</div></div><div class="side-bottom"><span>আজকের ফোকাস</span><span id="heroFocus" style="color:var(--mint)">শুরু করো →</span></div></div>
+</section>
+<nav class="tabs">
+<button class="tab active" data-tab="home">◈ ওভারভিউ</button><button class="tab" data-tab="tasks">✓ টাস্ক</button><button class="tab" data-tab="logs">▤ পড়ার লগ</button><button class="tab" data-tab="routine">◷ রুটিন</button><button class="tab" data-tab="insights">↗ অগ্রগতি</button>
+</nav>
+
+<section class="panel active" id="home">
+  <div class="stats">
+    <div class="stat"><span class="sicon">✓</span><div class="label">আজকের টাস্ক</div><strong id="sTasks">0/0</strong><small>সম্পন্ন হয়েছে</small></div>
+    <div class="stat"><span class="sicon">◷</span><div class="label">আজ পড়েছ</div><strong class="green" id="sMinutes">0m</strong><small>পড়ার লগ অনুযায়ী</small></div>
+    <div class="stat"><span class="sicon">▤</span><div class="label">পড়ার সেশন</div><strong class="blue" id="sSessions">0</strong><small>আজকের লগ</small></div>
+    <div class="stat"><span class="sicon">↗</span><div class="label">টাস্ক অগ্রগতি</div><strong class="gold" id="sPercent">0%</strong><small>আজকের লক্ষ্য</small></div>
+  </div>
+  <div class="layout">
+    <div>
+      <div class="card"><div class="card-head"><div><h3>আজকের মিশন</h3><div class="sub">ছোট কাজ শেষ করো, আত্মবিশ্বাস বাড়াও</div></div><button class="btn sm" onclick="switchTab('tasks')">+ টাস্ক</button></div><label class="meta" for="homeDate">তারিখ নির্বাচন</label><input class="filter" type="date" id="homeDate" style="margin:5px 0 13px"><div class="progress"><div id="homeProgress"></div></div><div class="progress-label"><span id="progressText">এখনো কোনো টাস্ক নেই</span><span id="progressPct">0%</span></div><div id="homeTasks" class="list"></div></div>
+      <div class="card"><div class="card-head"><div><h3>এই সপ্তাহের ধারাবাহিকতা</h3><div class="sub">প্রতিদিন অল্প হলেও পড়ার চেষ্টা করো</div></div><span class="pill">৭ দিন</span></div><div id="weekStrip" class="week"></div></div>
+    </div>
+    <div>
+      <div class="card"><div class="card-head"><div><h3>আজ কী পড়েছ?</h3><div class="sub">বই, অধ্যায় ও সময় সংরক্ষণ করো</div></div><button class="btn ghost sm" onclick="switchTab('logs')">+ লগ</button></div><div id="homeLogs" class="list"></div></div>
+      <div class="card"><div class="card-head"><div><h3>আজকের রুটিন</h3><div class="sub">তোমার নির্ধারিত সময়</div></div><button class="btn ghost sm" onclick="switchTab('routine')">দেখো</button></div><div id="homeRoutine"></div></div>
+      <div class="notice">✦ <b>ফোকাস টিপ:</b> ২৫–৫০ মিনিট মনোযোগ দিয়ে পড়ো, তারপর ৫–১০ মিনিট বিরতি নাও। পড়া শেষে বই বন্ধ করে নিজেকে প্রশ্ন করো—কী মনে আছে?</div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="tasks">
+ <div class="layout">
+  <div class="card"><div class="card-head"><div><h3>নতুন টাস্ক তৈরি</h3><div class="sub">আজ কী শেষ করতে চাও?</div></div><span class="pill">TASK</span></div>
+   <form id="taskForm"><div class="field"><label for="taskName">টাস্কের নাম</label><input id="taskName" required placeholder="যেমন: Preposition — ২০টি MCQ"></div><div class="form-grid"><div class="field"><label for="taskSubject">বিষয়</label><select id="taskSubject"><option>English</option><option>বাংলা</option><option>গণিত</option><option>সাধারণ জ্ঞান</option><option>বিজ্ঞান ও ICT</option><option>মডেল টেস্ট</option><option>অন্যান্য</option></select></div><div class="field"><label for="taskMins">লক্ষ্য সময় (মিনিট)</label><input id="taskMins" type="number" min="5" step="5" value="30"></div></div><div class="field"><label for="taskDate">কোন দিনের জন্য?</label><input id="taskDate" type="date" required></div><button class="btn" type="submit">＋ টাস্ক সংরক্ষণ</button></form>
+  </div>
+  <div class="card"><div class="card-head"><div><h3>টাস্ক তালিকা</h3><div class="sub">তারিখ অনুযায়ী দেখো এবং টিক দাও</div></div></div><div class="field"><label for="taskFilter">তারিখ</label><input id="taskFilter" type="date"></div><div id="taskList" class="list"></div></div>
+ </div>
+</section>
+
+<section class="panel" id="logs">
+ <div class="layout">
+  <div class="card"><div class="card-head"><div><h3>পড়ার সেশন যোগ করো</h3><div class="sub">কী পড়েছ তার প্রমাণ রাখো</div></div><span class="pill">STUDY LOG</span></div>
+   <form id="logForm"><div class="field"><label for="logBook">বই / গাইড / রিসোর্স</label><input id="logBook" required placeholder="যেমন: Job Solution Guide"></div><div class="field"><label for="logTopic">অধ্যায় / টপিক</label><input id="logTopic" required placeholder="যেমন: শতকরা"></div><div class="form-grid"><div class="field"><label for="logSubject">বিষয়</label><select id="logSubject"><option>গণিত</option><option>English</option><option>বাংলা</option><option>সাধারণ জ্ঞান</option><option>বিজ্ঞান ও ICT</option><option>অন্যান্য</option></select></div><div class="field"><label for="logMins">সময় (মিনিট)</label><input id="logMins" type="number" min="1" value="30" required></div></div><div class="form-grid"><div class="field"><label for="logPages">পৃষ্ঠা / প্রশ্ন</label><input id="logPages" placeholder="ঐচ্ছিক"></div><div class="field"><label for="logDate">তারিখ</label><input id="logDate" type="date" required></div></div><div class="field"><label for="logNote">নোট / কী শিখলে</label><textarea id="logNote" placeholder="কঠিন অংশ, মনে রাখার সূত্র..."></textarea></div><button class="btn" type="submit">＋ পড়ার লগ সংরক্ষণ</button></form>
+ </div>
+ <div class="card"><div class="card-head"><div><h3>তোমার পড়ার ইতিহাস</h3><div class="sub">যেকোনো দিনের সেশন দেখো</div></div></div><div class="field"><label for="logFilter">তারিখ</label><input id="logFilter" type="date"></div><div id="logList" class="list"></div></div>
+ </div>
+</section>
+
+<section class="panel" id="routine">
+ <div class="layout">
+  <div class="card"><div class="card-head"><div><h3>নিজের রুটিন বানাও</h3><div class="sub">সময়, বিষয় ও লক্ষ্য ঠিক করো</div></div></div><form id="routineForm"><div class="form-grid"><div class="field"><label for="rTime">সময়</label><input id="rTime" required placeholder="৬:৩০–৭:০০ AM"></div><div class="field"><label for="rDay">দিন</label><select id="rDay"><option>প্রতিদিন</option><option>শনিবার</option><option>রবিবার</option><option>সোমবার</option><option>মঙ্গলবার</option><option>বুধবার</option><option>বৃহস্পতিবার</option><option>শুক্রবার</option></select></div></div><div class="field"><label for="rTitle">কী পড়বে?</label><input id="rTitle" required placeholder="English Grammar"></div><div class="field"><label for="rDetail">বিস্তারিত লক্ষ্য</label><input id="rDetail" placeholder="যেমন: Tense + ২০টি MCQ"></div><button class="btn" type="submit">＋ রুটিনে যোগ করো</button></form></div>
+  <div class="card"><div class="card-head"><div><h3>আমার রুটিন</h3><div class="sub">নিজের সময়সূচি গুছিয়ে রাখো</div></div><button class="btn ghost sm" onclick="addSuggestedRoutine()">প্রস্তাবিত রুটিন</button></div><div id="routineList"></div></div>
+ </div>
+</section>
+
+<section class="panel" id="insights">
+ <div class="stats"><div class="stat"><span class="sicon">◷</span><div class="label">এই সপ্তাহে পড়া</div><strong class="green" id="wMinutes">0m</strong><small>মোট মিনিট</small></div><div class="stat"><span class="sicon">✓</span><div class="label">টাস্ক সম্পন্ন</div><strong class="blue" id="wDone">0%</strong><small>সাপ্তাহিক হার</small></div><div class="stat"><span class="sicon">▤</span><div class="label">পড়ার সেশন</div><strong class="gold" id="wLogs">0</strong><small>এই সপ্তাহে</small></div><div class="stat"><span class="sicon">🔥</span><div class="label">ধারাবাহিকতা</div><strong id="wStreak">0</strong><small>দিন</small></div></div>
+ <div class="layout"><div class="card"><div class="card-head"><div><h3>দৈনিক পড়ার সময়</h3><div class="sub">এই সপ্তাহের মিনিট</div></div></div><div id="weekBars" class="weekbars"></div></div><div class="card"><div class="card-head"><div><h3>সাপ্তাহিক রিভিউ</h3><div class="sub">কী ভালো হলো, কী উন্নত করবে?</div></div></div><div class="field"><label for="reviewWin">এই সপ্তাহে যা ভালো হয়েছে</label><textarea id="reviewWin" placeholder="যেমন: গণিতের ৩টি অধ্যায় শেষ করেছি"></textarea></div><div class="field"><label for="reviewImprove">পরের সপ্তাহে যা উন্নত করব</label><textarea id="reviewImprove" placeholder="যেমন: প্রতিদিন ২০টি English MCQ"></textarea></div><button class="btn" onclick="saveReview()">রিভিউ সংরক্ষণ</button><p id="reviewSaved" class="sub"></p></div></div>
+ <div class="card"><div class="card-head"><div><h3>ডেটা ও ব্যাকআপ</h3><div class="sub">তোমার পড়ার হিসাব নিরাপদে রাখো</div></div></div><p class="sub">তথ্য এই ব্রাউজারে সেভ হয়। অন্য ডিভাইসে নেওয়ার জন্য JSON ব্যাকআপ ডাউনলোড করে পরে ইমপোর্ট করো। ব্রাউজারের ডেটা মুছে গেলে তথ্য হারাতে পারে।</p><button class="btn" onclick="exportData()">↓ ব্যাকআপ ডাউনলোড</button> <label class="btn ghost" style="display:inline-block;margin-left:6px">ব্যাকআপ ইমপোর্ট<input id="importFile" type="file" accept=".json,application/json" style="display:none" onchange="importData()"></label> <button class="btn red" onclick="clearData()">সব ডেটা মুছুন</button></div>
+</section>
+<div class="footer">FOCUS / STUDY OS · ছোট ছোট অভ্যাস, বড় অগ্রগতি ✦ ডেটা এই ডিভাইসেই সংরক্ষিত</div>
+</div>
+<script>
+const KEY='focusStudyOS_v2';
+const today=()=>{let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const dateLabel=s=>s?new Date(s+'T12:00:00').toLocaleDateString('bn-BD',{day:'numeric',month:'short'}):'';
+const bnNum=n=>Number(n||0).toLocaleString('bn-BD');
+const $=id=>document.getElementById(id);
+let db=readDB();
+function readDB(){try{let x=JSON.parse(localStorage.getItem(KEY));return x&&Array.isArray(x.tasks)?x:{tasks:[],logs:[],routine:[],reviews:{}}}catch(e){return {tasks:[],logs:[],routine:[],reviews:{}}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function switchTab(id){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id))}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+['homeDate','taskDate','taskFilter','logDate','logFilter'].forEach(id=>$(id).value=today());
+$('homeDate').addEventListener('change',()=>{$('taskFilter').value=$('homeDate').value;$('logFilter').value=$('homeDate').value;render()});
+$('taskFilter').addEventListener('change',()=>{$('homeDate').value=$('taskFilter').value;render()});
+$('logFilter').addEventListener('change',()=>{$('homeDate').value=$('logFilter').value;render()});
+$('taskForm').addEventListener('submit',e=>{e.preventDefault();db.tasks.push({id:uid(),name:$('taskName').value.trim(),subject:$('taskSubject').value,mins:+$('taskMins').value||30,date:$('taskDate').value,done:false});$('taskName').value='';save()});
+$('logForm').addEventListener('submit',e=>{e.preventDefault();db.logs.push({id:uid(),book:$('logBook').value.trim(),topic:$('logTopic').value.trim(),subject:$('logSubject').value,mins:+$('logMins').value||0,pages:$('logPages').value.trim(),date:$('logDate').value,note:$('logNote').value.trim()});['logBook','logTopic','logPages','logNote'].forEach(id=>$(id).value='');save()});
+$('routineForm').addEventListener('submit',e=>{e.preventDefault();db.routine.push({id:uid(),time:$('rTime').value.trim(),day:$('rDay').value,title:$('rTitle').value.trim(),detail:$('rDetail').value.trim()});['rTime','rTitle','rDetail'].forEach(id=>$(id).value='');save()});
+function toggleTask(id){let t=db.tasks.find(t=>t.id===id);if(t)t.done=!t.done;save()}
+function remove(type,id){if(confirm('এই তথ্যটি মুছে ফেলবে?')){db[type]=db[type].filter(x=>x.id!==id);save()}}
+function taskCard(t){return `<div class="task ${t.done?'done':''}"><input type="checkbox" aria-label="সম্পন্ন" ${t.done?'checked':''} onchange="toggleTask('${t.id}')"><div class="task-main"><div class="task-title">${esc(t.name)}</div><div class="meta">${esc(t.subject)} · লক্ষ্য ${bnNum(t.mins)} মিনিট · ${dateLabel(t.date)}</div></div><button class="btn red sm" onclick="remove('tasks','${t.id}')">×</button></div>`}
+function logCard(l){return `<div class="book-entry"><div class="card-head" style="margin-bottom:4px"><h4>${esc(l.book)}</h4><button class="btn red sm" onclick="remove('logs','${l.id}')">×</button></div><div>${esc(l.topic)}</div><div class="meta">${esc(l.subject)} · ${bnNum(l.mins)} মিনিট · ${dateLabel(l.date)} ${l.pages?'· '+esc(l.pages):''}</div>${l.note?`<p>${esc(l.note)}</p>`:''}</div>`}
+function routineCard(r){return `<div class="routine-line"><div class="time">${esc(r.time)}</div><div><div style="font-weight:700">${esc(r.title)}</div><div class="meta">${esc(r.day)}${r.detail?' · '+esc(r.detail):''}</div></div><button class="btn red sm" onclick="remove('routine','${r.id}')">×</button></div>`}
+function getWeek(){let n=new Date(),start=new Date(n);start.setHours(0,0,0,0);start.setDate(n.getDate()-((n.getDay()+6)%7));let dates=[];for(let i=0;i<7;i++){let d=new Date(start);d.setDate(start.getDate()+i);dates.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`)}return dates}
+function streakCount(){let d=new Date();let count=0;for(let i=0;i<366;i++){let s=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;if(!db.tasks.some(t=>t.date===s&&t.done)&&!db.logs.some(l=>l.date===s)){if(i===0){d.setDate(d.getDate()-1);continue}break}count++;d.setDate(d.getDate()-1)}return count}
+function render(){
+let date=$('homeDate').value||today();$('topDate').textContent=new Date().toLocaleDateString('bn-BD',{weekday:'short',day:'numeric',month:'short'});
+let tasks=db.tasks.filter(t=>t.date===date),logs=db.logs.filter(l=>l.date===date),done=tasks.filter(t=>t.done).length,mins=logs.reduce((s,l)=>s+l.mins,0),pct=tasks.length?Math.round(done/tasks.length*100):0;
+$('sTasks').textContent=`${bnNum(done)}/${bnNum(tasks.length)}`;$('sMinutes').textContent=mins>=60?`${bnNum(Math.floor(mins/60))}h ${bnNum(mins%60)}m`:`${bnNum(mins)}m`;$('sSessions').textContent=bnNum(logs.length);$('sPercent').textContent=bnNum(pct)+'%';$('homeProgress').style.width=pct+'%';$('progressText').textContent=tasks.length?`${bnNum(done)}টি টাস্ক শেষ`:'আজকের জন্য টাস্ক যোগ করো';$('progressPct').textContent=bnNum(pct)+'%';
+$('homeTasks').innerHTML=tasks.length?tasks.map(taskCard).join(''):'<div class="empty">আজকের মিশন এখনো তৈরি হয়নি। উপরের “+ টাস্ক” চাপ দিয়ে শুরু করো।</div>';
+$('homeLogs').innerHTML=logs.length?logs.map(logCard).join(''):'<div class="empty">পড়া শেষ হলে এখানে সেশন যোগ করো।</div>';
+let dow=new Date(date+'T12:00:00').toLocaleDateString('bn-BD',{weekday:'long'});let rs=db.routine.filter(r=>r.day==='প্রতিদিন'||r.day===dow);$('homeRoutine').innerHTML=rs.length?rs.map(routineCard).join(''):'<div class="empty">রুটিনে কাজ যোগ করলে এখানে দেখা যাবে।</div>';
+let tf=$('taskFilter').value||date,ts=db.tasks.filter(t=>t.date===tf);$('taskList').innerHTML=ts.length?ts.map(taskCard).join(''):'<div class="empty">এই তারিখে কোনো টাস্ক নেই।</div>';
+let lf=$('logFilter').value||date,ls=db.logs.filter(l=>l.date===lf);$('logList').innerHTML=ls.length?ls.map(logCard).join(''):'<div class="empty">এই তারিখে পড়ার লগ নেই।</div>';
+$('routineList').innerHTML=db.routine.length?db.routine.map(routineCard).join(''):'<div class="empty">এখনো রুটিন নেই। প্রস্তাবিত রুটিন যোগ করতে পারো।</div>';
+let week=getWeek();$('weekStrip').innerHTML=week.map((d,i)=>{let count=db.tasks.some(t=>t.date===d&&t.done)||db.logs.some(l=>l.date===d),name=['সোম','মঙ্গল','বুধ','বৃহ','শুক্র','শনি','রবি'][i];return `<div class="daybox ${count?'has':''} ${d===today()?'today':''}"><div class="dayname">${name}</div><strong>${new Date(d+'T12:00:00').getDate()}</strong><span class="dot"></span></div>`}).join('');
+let wlogs=db.logs.filter(l=>week.includes(l.date)),wtasks=db.tasks.filter(t=>week.includes(t.date)),wdone=wtasks.filter(t=>t.done).length,wp=wtasks.length?Math.round(wdone/wtasks.length*100):0,wmin=wlogs.reduce((s,l)=>s+l.mins,0);
+$('wMinutes').textContent=wmin>=60?`${bnNum((wmin/60).toFixed(1))}h`:`${bnNum(wmin)}m`;$('wDone').textContent=bnNum(wp)+'%';$('wLogs').textContent=bnNum(wlogs.length);$('wStreak').textContent=bnNum(streakCount());$('streak').textContent=bnNum(streakCount());$('heroFocus').textContent=tasks.length?`${bnNum(done)}/${bnNum(tasks.length)} টাস্ক`:'শুরু করো →';
+$('weekBars').innerHTML=week.map((d,i)=>{let m=db.logs.filter(l=>l.date===d).reduce((s,l)=>s+l.mins,0),h=Math.max(3,Math.min(100,m/Math.max(1,...week.map(x=>db.logs.filter(l=>l.date===x).reduce((s,l)=>s+l.mins,0)))*100));return `<div class="barcol"><span class="meta">${m?bnNum(m):''}</span><div class="bar" style="height:${h}%"></div><span class="barlabel">${['শনি','রবি','সোম','মঙ্গল','বুধ','বৃহ','শুক্র'][new Date(d+'T12:00:00').getDay()===6?0:new Date(d+'T12:00:00').getDay()===0?1:new Date(d+'T12:00:00').getDay()+1]||''}</span></div>`}).join('');
+let r=db.reviews[week[0]]||{};$('reviewWin').value=r.win||'';$('reviewImprove').value=r.improve||'';
+}
+function addSuggestedRoutine(){if(db.routine.length&&!confirm('বর্তমান রুটিনের সঙ্গে প্রস্তাবিত রুটিন যোগ হবে। চালিয়ে যাবে?'))return;[['৬:২০–৭:০০ AM','English Grammar','Vocabulary + ২০টি প্রশ্ন','প্রতিদিন'],['২:৩০–৪:০০ PM','গণিত ও মানসিক দক্ষতা','একটি অধ্যায় + অনুশীলন','প্রতিদিন'],['৪:৩০–৫:৩০ PM','বাংলা','ব্যাকরণ / সাহিত্য','প্রতিদিন'],['৭:৩০–৮:৩০ PM','সাধারণ জ্ঞান','বাংলাদেশ / আন্তর্জাতিক','প্রতিদিন'],['৮:৩০–৯:১০ PM','MCQ ও রিভিশন','ভুলের খাতা','প্রতিদিন'],['শুক্রবার ৭:৩০ PM','সাপ্তাহিক মডেল টেস্ট','৪০টি MCQ + বিশ্লেষণ','শুক্রবার']].forEach(x=>db.routine.push({id:uid(),time:x[0],title:x[1],detail:x[2],day:x[3]}));save()}
+function saveReview(){let w=getWeek();db.reviews[w[0]]={win:$('reviewWin').value,improve:$('reviewImprove').value};localStorage.setItem(KEY,JSON.stringify(db));$('reviewSaved').textContent='✓ এই সপ্তাহের রিভিউ সংরক্ষিত';}
+function exportData(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='focus-study-backup-'+today()+'.json';a.click();URL.revokeObjectURL(url)}
+function importData(){let f=$('importFile').files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x.tasks)||!Array.isArray(x.logs)||!Array.isArray(x.routine))throw Error();if(confirm('বর্তমান ডেটা প্রতিস্থাপিত হবে। ইমপোর্ট করবে?')){db={tasks:x.tasks,logs:x.logs,routine:x.routine,reviews:x.reviews||{}};save();alert('ব্যাকআপ ইমপোর্ট হয়েছে')}}catch(e){alert('সঠিক JSON ব্যাকআপ ফাইল নির্বাচন করো')}};r.readAsText(f)}
+function clearData(){if(confirm('সব টাস্ক, পড়ার লগ ও রুটিন মুছে ফেলবে? আগে ব্যাকআপ ডাউনলোড করে নাও।')){db={tasks:[],logs:[],routine:[],reviews:{}};save()}}
+render();
+</script>
+
+<script>
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+  });
+}
+</script>
+
+</body></html>
